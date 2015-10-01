@@ -1,0 +1,4 @@
+[2015-09-30 21:55:03,594][pdETL][INFO][<class 'sqlite3.IntegrityError'>: column id is not unique]
+[2015-09-30 21:55:03,595][pdETL][INFO][<class 'sqlite3.IntegrityError'>: column id is not unique]
+[2015-09-30 21:55:03,595][pdETL][INFO][<class 'sqlite3.IntegrityError'>: column id is not unique]
+[2015-09-30 21:55:03,604][pdETL][INFO][no such column: nan]

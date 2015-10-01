@@ -1,0 +1,6 @@
+[2015-09-30 21:55:37,111][pdETL][INFO][<class 'sqlite3.IntegrityError'>: column id is not unique]
+[2015-09-30 21:55:37,111][pdETL][INFO][<class 'sqlite3.IntegrityError'>: column id is not unique]
+[2015-09-30 21:55:37,111][pdETL][INFO][<class 'sqlite3.IntegrityError'>: column id is not unique]
+[2015-09-30 21:55:37,121][pdETL][INFO][unrecognized token: "2L"]
+[2015-09-30 21:55:37,121][pdETL][INFO][unrecognized token: "3L"]
+[2015-09-30 21:55:37,121][pdETL][INFO][unrecognized token: "4L"]

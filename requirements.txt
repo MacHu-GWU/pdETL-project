@@ -1,0 +1,2 @@
+sqlite4dummy >= 0.0.5
+typarser >= 0.0.2
