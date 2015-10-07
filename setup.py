@@ -61,7 +61,7 @@ NAME = "pdETL" # name your package
 VERSION = __import__(NAME).__version__
 PACKAGES = [NAME] + ["%s.%s" % (NAME, i) for i in find_packages(NAME)]
 PACKAGE_DATA = {
-    "typarse": ["*.txt", "*.bat"],
+    "pdETL": ["*.txt", "*.bat"],
 }
 SHORT_DESCRIPTION = __import__(NAME).__short_description__ # GitHub Short Description
 AUTHOR = "Sanhe Hu"
@@ -80,7 +80,7 @@ LICENSE = "MIT"
 
 PLATFORMS = ["Windows", "MacOS", "Unix"]
 CLASSIFIERS = [
-    "Development Status :: 5 - Production/Stable",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Natural Language :: English",

@@ -49,7 +49,6 @@ _sqlite4dummy_dtype_map = {
     "DATETIMETYPE": dtype_.DATETIME,
 }
 
-
 _SQLITE_CREATE_TABLE_TEMPLATE = \
 """
 %s
@@ -64,15 +63,18 @@ class CSVFile(object):
     mapping中的是{CSV中的列名: 数据库中的列名}
     """
     nrows = 10
-    chunksize = 1000
     
-    def __init__(self, table_name, abspath, sep=",", header=0, usecols=None, 
+    def __init__(self, table_name, abspath, sep=",", quotechar='"', 
+        header=0, usecols=None, iterator=True, chunksize=1000,
         target_schema=dict(), mapping=dict(), primary_keys=[], converter=None):
         # validate input arguments
         self.table_name = table_name
         self.abspath = abspath
         self.sep = sep
+        self.quotechar = quotechar
         self.header = header
+        self.iterator=iterator
+        self.chunksize=chunksize
         self.usecols = usecols
         self.mapping = mapping
         self.primary_keys = primary_keys
@@ -121,9 +123,10 @@ class CSVFile(object):
     def analysis_mapping(self):
         """
         """
-        for df in pd.read_csv(self.abspath, sep=self.sep, header=self.header,
+        for df in pd.read_csv(self.abspath, sep=self.sep, 
+            quotechar=self.quotechar, header=self.header,
             dtype=self.pd_dtype, usecols=self.usecols, prefix=self.prefix,
-            iterator=True, chunksize=10):
+            iterator=True, chunksize=self.chunksize):
             
             columns = list(df.columns)
             
@@ -197,7 +200,8 @@ class CSVFile(object):
     def generate_rows(self):
         """
         """
-        for df in pd.read_csv(self.abspath, sep=self.sep, header=self.header,
+        for df in pd.read_csv(self.abspath, sep=self.sep, 
+            quotechar=self.quotechar, header=self.header,
             dtype=self.pd_dtype, usecols=self.usecols, prefix=self.prefix,
             iterator=True, chunksize=self.chunksize):
             
